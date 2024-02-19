@@ -1,7 +1,7 @@
-import { getReviewsDetails } from 'components/Api';
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import css from './Reviews..module.css';
+import { getReviewsDetails } from "../../components/Api";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import css from "./Reviews..module.css";
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -12,8 +12,8 @@ const Reviews = () => {
       .then(({ data }) => {
         setReview(data.results);
       })
-      .catch(error => {
-        throw new Error('ooops...');
+      .catch((error) => {
+        throw new Error("ooops...");
       });
   }, [movieId]);
 

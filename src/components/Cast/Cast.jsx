@@ -1,8 +1,8 @@
-import { getCastsDetails } from 'components/Api';
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import noImage from '../../noImage.jpeg';
-import css from './Cast.module.css';
+import { getCastsDetails } from "../../components/Api";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import noImage from "../../noImage.jpeg";
+import css from "./Cast.module.css";
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -13,8 +13,8 @@ const Cast = () => {
       .then(({ data }) => {
         setCast(data.cast);
       })
-      .catch(error => {
-        throw new Error('oops...');
+      .catch((error) => {
+        throw new Error("oops...");
       });
   }, [movieId]);
 
