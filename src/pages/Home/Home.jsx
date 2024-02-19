@@ -1,7 +1,7 @@
-import { getTrendingMovies } from 'components/Api';
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import css from './Home.module.css';
+import getTrendingMovies from "../../components/Api";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import css from "./Home.module.css";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -9,9 +9,9 @@ const Home = () => {
   useEffect(() => {
     getTrendingMovies()
       .then(({ data }) => setMovies(data.results))
-      .catch(error => {
+      .catch((error) => {
         throw new Error(
-          'woops, something went wromg... Please, try agin later.'
+          "woops, something went wromg... Please, try agin later."
         );
       });
   }, []);
