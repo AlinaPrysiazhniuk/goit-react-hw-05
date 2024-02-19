@@ -1,0 +1,27 @@
+.review {
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item {
+  padding-bottom: 15px;
+}
+
+.author {
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+
+.content {
+  padding-left: 40px;
+  color: rgb(10, 10, 10);
+}
+
+.text {
+  font-size: 18px;
+}

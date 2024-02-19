@@ -1,0 +1,38 @@
+.container_header {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  background-color: rgb(10, 11, 85);
+  justify-content: center;
+  min-height: 80px;
+  gap: 40px;
+  border-bottom: 3px solid rgb(255, 255, 255);
+}
+
+.link_header {
+  font-family: 'Bungee', sans-serif;
+  text-decoration: none;
+  font-size: 40px;
+  color: rgb(217, 209, 209);
+  font-weight: 700;
+  letter-spacing: -1px;
+  transition-duration: 600ms;
+}
+
+.link_header:hover {
+  color: rgb(195, 34, 131);
+  transform: scale(1.3);
+}
+
+.active {
+  font-family: 'Bungee', sans-serif;
+  text-decoration: none;
+  font-size: 40px;
+  color: rgb(217, 209, 209);
+  font-weight: 700;
+  letter-spacing: -1px;
+  transition-duration: 2000ms;
+  border-bottom: 2px solid rgb(227, 14, 117);
+}

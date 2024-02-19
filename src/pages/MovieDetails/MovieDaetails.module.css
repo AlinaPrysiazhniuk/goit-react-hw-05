@@ -1,0 +1,86 @@
+.movie {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.container_movie {
+  padding-left: 120px;
+  padding-right: 120px;
+  margin: -30px auto 0 auto;
+  display: flex;
+  gap: 30px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid rgb(245, 241, 241);
+}
+
+.container_additional {
+  padding: 20px 0;
+  margin: 0 auto;
+
+  border-bottom: 2px solid rgb(245, 241, 241);
+}
+
+.img {
+  border-radius: 10px;
+  max-width: fit-content;
+  /* height: auto; */
+
+  width: 100%;
+  /* width: 320px; */
+}
+
+.goBack {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  height: 60px;
+  width: auto;
+  text-align: center;
+  letter-spacing: 0.06em;
+  border: 0;
+  border-radius: 4px;
+  color: white;
+  background-color: rgb(179, 174, 175);
+  text-decoration: none;
+}
+
+.movieDescription {
+  padding-top: 15px;
+}
+
+.movieTitle {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.movieText {
+  margin-bottom: 20px;
+}
+
+.movieOverview {
+  margin-bottom: 5px;
+}
+
+.movieGenres {
+  margin-bottom: 5px;
+}
+
+.movieAdditional {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.listAdditional {
+  display: flex;
+  justify-content: space-around;
+}
+
+.itemAdditional {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}

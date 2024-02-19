@@ -1,0 +1,37 @@
+.section_casts {
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.item {
+  background-color: aliceblue;
+  border: 1px solid rgb(149, 143, 143);
+  border-radius: 5px;
+  width: 260px;
+  flex-direction: column;
+  transition: 250ms;
+}
+
+.img {
+  margin: auto;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-weight: 400;
+}
+
+.text {
+  font-size: 18px;
+}
