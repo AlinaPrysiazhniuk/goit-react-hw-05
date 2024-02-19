@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import { useState, useEffect } from "react";
 import { getSearchMovie } from "../../components/Api";
-import SearchBar from "components/SearchBar/SearchBar";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import { Link, useSearchParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import noImage from "../../noImage.jpeg";
