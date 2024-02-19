@@ -1,4 +1,4 @@
-import getTrendingMovies from "../../components/Api";
+import { getTrendingMovies } from "../../components/Api";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import css from "./Home.module.css";
