@@ -1,20 +1,20 @@
 /* eslint-disable no-undef */
-import { useState, useEffect } from 'react';
-import { getSearchMovie } from 'components/Api';
-import SearchBar from 'components/SearchBar/SearchBar';
-import { Link, useSearchParams } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-import noImage from '../../noImage.jpeg';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import css from './Movie.module.css';
+import { useState, useEffect } from "react";
+import { getSearchMovie } from "../../components/Api";
+import SearchBar from "components/SearchBar/SearchBar";
+import { Link, useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import noImage from "../../noImage.jpeg";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import css from "./Movie.module.css";
 
 const Movie = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const location = useLocation();
-  const searchQuery = searchParams.get('query');
+  const searchQuery = searchParams.get("query");
 
   useEffect(() => {
     if (!searchQuery) {
@@ -28,12 +28,12 @@ const Movie = () => {
         }
         setMovies(data.results);
       })
-      .catch(error => {
-        throw new Error('...ooopppsssss');
+      .catch((error) => {
+        throw new Error("...ooopppsssss");
       });
   }, [searchQuery]);
 
-  const onSubmit = searchQuery => {
+  const onSubmit = (searchQuery) => {
     setSearchParams({ query: `${searchQuery}` });
   };
 
