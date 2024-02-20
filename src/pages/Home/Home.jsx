@@ -7,13 +7,24 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    getTrendingMovies()
-      .then(({ data }) => setMovies(data.results))
-      .catch((error) => {
+    const getTrending = async () => {
+      try {
+        const results = await getTrendingMovies();
+        setMovies(results);
+      } catch (error) {
         throw new Error(
           "woops, something went wromg... Please, try agin later."
         );
-      });
+      }
+    };
+    getTrending();
+    // getTrendingMovies()
+    //   .then(({ data }) => setMovies(data.results))
+    //   .catch((error) => {
+    //     throw new Error(
+    //       "woops, something went wromg... Please, try agin later."
+    //     );
+    //   });
   }, []);
 
   return (
