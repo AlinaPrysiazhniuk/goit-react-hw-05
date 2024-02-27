@@ -25,9 +25,8 @@ const App = () => {
             <Route path="cast" element={<MovieCast />} />
             <Route path="reviews" element={<MovieReviews />} />
           </Route>
-
-          <Route path="*" element={<NotFoundPage />} />
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <ToastContainer autoClose={5000} />
     </div>
