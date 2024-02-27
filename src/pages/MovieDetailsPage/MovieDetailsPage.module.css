@@ -24,11 +24,7 @@
 
 .img {
   border-radius: 10px;
-  max-width: fit-content;
-  /* height: auto; */
-
   width: 100%;
-  /* width: 320px; */
 }
 
 .goBack {
