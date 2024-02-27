@@ -14,15 +14,24 @@ const MovieDetails = () => {
   const getYear = () => new Date(movie.release_date).getFullYear();
 
   useEffect(() => {
-    getMovieDetails(movieId)
-      .then(({ data }) => {
+    const getDetails = async () => {
+      try {
+        const data = await getMovieDetails(movieId);
         setMovie(data);
-      })
-      .catch((error) => {
-        throw new Error(
-          "woops, something went wromg... Please, try agin later."
-        );
-      });
+      } catch (error) {
+        throw new Error("...ooppps");
+      }
+    };
+    getDetails();
+    // getMovieDetails(movieId)
+    //   .then(({ data }) => {
+    //     setMovie(data);
+    //   })
+    //   .catch((error) => {
+    //     throw new Error(
+    //       "woops, something went wromg... Please, try agin later."
+    //     );
+    //   });
   }, [movieId]);
 
   const { title, overview, vote_average, genres, poster_path } = movie;

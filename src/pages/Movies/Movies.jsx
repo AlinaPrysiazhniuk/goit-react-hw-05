@@ -20,17 +20,23 @@ const Movie = () => {
     if (!searchQuery) {
       return;
     }
-    getSearchMovie(searchQuery)
-      .then(({ data }) => {
-        if (data.results.length === 0) {
-          toast.error(`There are no movies on your request "${searchQuery}"`);
-          setMovies([]);
-        }
-        setMovies(data.results);
-      })
-      .catch((error) => {
-        throw new Error("...ooopppsssss");
-      });
+
+    const getMovieQuery = async () => {
+      const { data } = await getSearchMovie(searchQuery);
+      setMovies(data.results);
+    };
+    getMovieQuery();
+    // getSearchMovie(searchQuery)
+    //   .then(({ data }) => {
+    //     if (data.results.length === 0) {
+    //       toast.error(`There are no movies on your request "${searchQuery}"`);
+    //       setMovies([]);
+    //     }
+    //     setMovies(data.results);
+    //   })
+    //   .catch((error) => {
+    //     throw new Error("...ooopppsssss");
+    //   });
   }, [searchQuery]);
 
   const onSubmit = (searchQuery) => {

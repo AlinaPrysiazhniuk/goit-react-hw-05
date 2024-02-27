@@ -9,13 +9,22 @@ const Cast = () => {
   const [cast, setCast] = useState([]);
 
   useEffect(() => {
-    getCastsDetails(movieId)
-      .then(({ data }) => {
-        setCast(data.cast);
-      })
-      .catch((error) => {
+    const getCasts = async () => {
+      try {
+        const results = await getCastsDetails(movieId);
+        setCast(results.cast);
+      } catch (error) {
         throw new Error("oops...");
-      });
+      }
+    };
+    getCasts();
+    // getCastsDetails(movieId)
+    //   .then(({ data }) => {
+    //     setCast(data.cast);
+    //   })
+    //   .catch((error) => {
+    //     throw new Error("oops...");
+    //   });
   }, [movieId]);
 
   return (

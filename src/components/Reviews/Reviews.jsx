@@ -8,13 +8,23 @@ const Reviews = () => {
   const [review, setReview] = useState([]);
 
   useEffect(() => {
-    getReviewsDetails(movieId)
-      .then(({ data }) => {
-        setReview(data.results);
-      })
-      .catch((error) => {
-        throw new Error("ooops...");
-      });
+    const getRewies = async () => {
+      try {
+        const results = await getReviewsDetails(movieId);
+        setReview(results);
+      } catch (error) {
+        throw new Error("oops...");
+      }
+    };
+    getRewies();
+
+    // getReviewsDetails(movieId)
+    //   .then(({ data }) => {
+    //     setReview(data.results);
+    //   })
+    //   .catch((error) => {
+    //     throw new Error("ooops...");
+    //   });
   }, [movieId]);
 
   return (
