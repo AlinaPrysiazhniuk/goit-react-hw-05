@@ -20,13 +20,6 @@
   color: aliceblue;
 }
 
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
 .item {
   background-color: aliceblue;
   border: 1px solid rgb(149, 143, 143);

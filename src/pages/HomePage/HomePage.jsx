@@ -2,6 +2,7 @@ import { getTrendingMovies } from "../../components/Api";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import css from "./HomePage.module.css";
+import { MovieList } from "../../components/MovieList/MovieList";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -24,7 +25,8 @@ const HomePage = () => {
         <div className={css.container_home}>
           <h2 className={css.title}>Trending today</h2>
 
-          <ul className={css.list}>
+          {/* <ul className={css.list}> */}
+          <MovieList>
             {movies.map(({ id, poster_path, title }) => (
               <li key={id} className={css.item}>
                 <Link to={`movies/${id}`} className={css.link}>
@@ -43,7 +45,8 @@ const HomePage = () => {
                 </Link>
               </li>
             ))}
-          </ul>
+          </MovieList>
+          {/* </ul> */}
         </div>
       )}
     </section>

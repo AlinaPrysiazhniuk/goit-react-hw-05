@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { useState, useEffect } from "react";
 import { getSearchMovie } from "../../components/Api";
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -8,6 +7,7 @@ import noImage from "../../noImage.png";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import css from "./MoviesPage.module.css";
+import { MovieList } from "../../components/MovieList/MovieList";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -45,30 +45,30 @@ const MoviesPage = () => {
       <SearchBar onSearch={onSubmit} />
       <div className={css.container_movie}>
         {movies && (
-          <>
-            <ul className={css.list}>
-              {movies.map(({ id, poster_path, title }) => (
-                <li key={id} className={css.item}>
-                  <Link
-                    to={`/movies/${id}`}
-                    state={{ from: location }}
-                    className={css.link}
-                  >
-                    <img
-                      className={css.img}
-                      src={
-                        poster_path
-                          ? `https://image.tmdb.org/t/p/w200/${poster_path}`
-                          : noImage
-                      }
-                      alt={title}
-                    />
-                    <p className={css.text}>{title}</p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </>
+          // <ul className={css.list}>
+          <MovieList>
+            {movies.map(({ id, poster_path, title }) => (
+              <li key={id} className={css.item}>
+                <Link
+                  to={`/movies/${id}`}
+                  state={{ from: location }}
+                  className={css.link}
+                >
+                  <img
+                    className={css.img}
+                    src={
+                      poster_path
+                        ? `https://image.tmdb.org/t/p/w200/${poster_path}`
+                        : noImage
+                    }
+                    alt={title}
+                  />
+                  <p className={css.text}>{title}</p>
+                </Link>
+              </li>
+            ))}
+          </MovieList>
+          // </ul>
         )}
       </div>
     </section>
