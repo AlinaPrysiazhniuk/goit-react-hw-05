@@ -1,7 +1,7 @@
 import { getMovieDetails } from "../../components/Api";
 import { useState, useEffect } from "react";
 import { useParams, useLocation, Link, Outlet } from "react-router-dom";
-import noImage from "../../noImage.jpeg";
+import noImage from "../../noImage.png";
 import css from "./MovieDaetails.module.css";
 
 const MovieDetails = () => {
@@ -19,19 +19,10 @@ const MovieDetails = () => {
         const data = await getMovieDetails(movieId);
         setMovie(data);
       } catch (error) {
-        throw new Error("...ooppps");
+        console.log(error.message);
       }
     };
     getDetails();
-    // getMovieDetails(movieId)
-    //   .then(({ data }) => {
-    //     setMovie(data);
-    //   })
-    //   .catch((error) => {
-    //     throw new Error(
-    //       "woops, something went wromg... Please, try agin later."
-    //     );
-    //   });
   }, [movieId]);
 
   const { title, overview, vote_average, genres, poster_path } = movie;

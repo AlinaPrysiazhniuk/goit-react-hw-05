@@ -1,7 +1,7 @@
 import { getCastsDetails } from "../../components/Api";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import noImage from "../../noImage.jpeg";
+import noImage from "../../../src/noImage.png";
 import css from "./Cast.module.css";
 
 const Cast = () => {
@@ -14,17 +14,10 @@ const Cast = () => {
         const results = await getCastsDetails(movieId);
         setCast(results.cast);
       } catch (error) {
-        throw new Error("oops...");
+        console.log(error.message);
       }
     };
     getCasts();
-    // getCastsDetails(movieId)
-    //   .then(({ data }) => {
-    //     setCast(data.cast);
-    //   })
-    //   .catch((error) => {
-    //     throw new Error("oops...");
-    //   });
   }, [movieId]);
 
   return (

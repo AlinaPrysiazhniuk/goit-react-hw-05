@@ -4,7 +4,7 @@ import { getSearchMovie } from "../../components/Api";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { Link, useSearchParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import noImage from "../../noImage.jpeg";
+import noImage from "../../noImage.png";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import css from "./Movie.module.css";
@@ -22,21 +22,18 @@ const Movie = () => {
     }
 
     const getMovieQuery = async () => {
-      const { data } = await getSearchMovie(searchQuery);
-      setMovies(data.results);
+      try {
+        const data = await getSearchMovie(searchQuery);
+        if (data.length === 0) {
+          toast.error(`There are no movies on your request "${searchQuery}"`);
+          setMovies([]);
+        }
+        setMovies(data);
+      } catch (error) {
+        console.log(error.message);
+      }
     };
     getMovieQuery();
-    // getSearchMovie(searchQuery)
-    //   .then(({ data }) => {
-    //     if (data.results.length === 0) {
-    //       toast.error(`There are no movies on your request "${searchQuery}"`);
-    //       setMovies([]);
-    //     }
-    //     setMovies(data.results);
-    //   })
-    //   .catch((error) => {
-    //     throw new Error("...ooopppsssss");
-    //   });
   }, [searchQuery]);
 
   const onSubmit = (searchQuery) => {

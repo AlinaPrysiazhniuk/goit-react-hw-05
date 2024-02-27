@@ -24,8 +24,11 @@
   border-radius: 5px;
 
   width: 260px;
-  flex-direction: column;
   transition: 250ms;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .link {
@@ -36,11 +39,9 @@
 }
 
 .img {
-  margin: auto;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  margin-bottom: 10px;
+
   width: 100%;
-  max-width: max-content;
 }
 
 .text {

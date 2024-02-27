@@ -32,8 +32,10 @@
   border: 1px solid rgb(149, 143, 143);
   border-radius: 5px;
   width: 240px;
-  flex-direction: column;
+  /* flex-direction: column; */
   transition: 250ms;
+  /* display: flex; */
+  padding: 10px;
 }
 
 .link {
@@ -44,11 +46,6 @@
 }
 
 .img {
-  margin: auto;
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-
-.text {
-  padding-bottom: 10px;
+  width: 100%;
+  margin-bottom: 10px;
 }

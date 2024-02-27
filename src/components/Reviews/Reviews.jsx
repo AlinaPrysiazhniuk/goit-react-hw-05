@@ -13,18 +13,10 @@ const Reviews = () => {
         const results = await getReviewsDetails(movieId);
         setReview(results);
       } catch (error) {
-        throw new Error("oops...");
+        console.log(error.message);
       }
     };
     getRewies();
-
-    // getReviewsDetails(movieId)
-    //   .then(({ data }) => {
-    //     setReview(data.results);
-    //   })
-    //   .catch((error) => {
-    //     throw new Error("ooops...");
-    //   });
   }, [movieId]);
 
   return (

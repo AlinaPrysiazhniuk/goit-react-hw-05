@@ -12,19 +12,10 @@ const Home = () => {
         const results = await getTrendingMovies();
         setMovies(results);
       } catch (error) {
-        throw new Error(
-          "woops, something went wromg... Please, try agin later."
-        );
+        console.log(error.message);
       }
     };
     getTrending();
-    // getTrendingMovies()
-    //   .then(({ data }) => setMovies(data.results))
-    //   .catch((error) => {
-    //     throw new Error(
-    //       "woops, something went wromg... Please, try agin later."
-    //     );
-    //   });
   }, []);
 
   return (
@@ -43,7 +34,7 @@ const Home = () => {
                       poster_path ? (
                         `https://image.tmdb.org/t/p/w200/${poster_path}`
                       ) : (
-                        <div>noPhoto</div>
+                        <div>noImage</div>
                       )
                     }
                     alt={title}

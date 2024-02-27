@@ -17,12 +17,16 @@
   width: 260px;
   flex-direction: column;
   transition: 250ms;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .img {
-  margin: auto;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  /* margin: auto; */
+  margin-bottom: 10px;
+  /* padding-top: 10px; */
+  width: 100%;
 }
 
 .link {
