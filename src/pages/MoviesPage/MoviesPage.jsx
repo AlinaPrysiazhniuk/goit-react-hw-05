@@ -18,12 +18,13 @@ const MoviesPage = () => {
 
   useEffect(() => {
     if (!searchQuery) {
-      return;
+      return setMovies([]);
     }
 
     const getMovieQuery = async () => {
       try {
         const data = await getSearchMovie(searchQuery);
+
         if (data.length === 0) {
           toast.error(`There are no movies on your request "${searchQuery}"`);
           setMovies([]);
@@ -38,6 +39,7 @@ const MoviesPage = () => {
 
   const onSubmit = (searchQuery) => {
     setSearchParams({ query: `${searchQuery}` });
+    setMovies([]);
   };
 
   return (
