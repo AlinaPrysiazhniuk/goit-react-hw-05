@@ -7,9 +7,9 @@ import { useLocation } from "react-router-dom";
 import noImage from "../../noImage.png";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import css from "./Movie.module.css";
+import css from "./MoviesPage.module.css";
 
-const Movie = () => {
+const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -75,4 +75,4 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+export default MoviesPage;

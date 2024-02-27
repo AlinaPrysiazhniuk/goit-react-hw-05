@@ -1,9 +1,9 @@
 import { getTrendingMovies } from "../../components/Api";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import css from "./Home.module.css";
+import css from "./HomePage.module.css";
 
-const Home = () => {
+const HomePage = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -49,4 +49,4 @@ const Home = () => {
     </section>
   );
 };
-export default Home;
+export default HomePage;

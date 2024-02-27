@@ -1,9 +1,9 @@
-import { getReviewsDetails } from "../../components/Api";
+import { getReviewsDetails } from "../Api";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import css from "./Reviews..module.css";
+import css from "./MovieReviews.module.css";
 
-const Reviews = () => {
+const MovieReviews = () => {
   const { movieId } = useParams();
   const [review, setReview] = useState([]);
 
@@ -38,4 +38,4 @@ const Reviews = () => {
     </section>
   );
 };
-export default Reviews;
+export default MovieReviews;

@@ -2,9 +2,9 @@ import { getMovieDetails } from "../../components/Api";
 import { useState, useEffect } from "react";
 import { useParams, useLocation, Link, Outlet } from "react-router-dom";
 import noImage from "../../noImage.png";
-import css from "./MovieDaetails.module.css";
+import css from "./MovieDetailsPage.module.css";
 
-const MovieDetails = () => {
+const MovieDetailsPage = () => {
   const [movie, setMovie] = useState([]);
   const { movieId } = useParams();
 
@@ -96,4 +96,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default MovieDetailsPage;
