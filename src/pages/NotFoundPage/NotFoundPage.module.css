@@ -23,7 +23,9 @@
 
 .error {
   font-size: 200px;
-  color: rgb(198, 198, 198);
+  color: rgb(230, 230, 230);
+  display: inline-flex;
+  align-items: center;
 }
 
 .link_home {
