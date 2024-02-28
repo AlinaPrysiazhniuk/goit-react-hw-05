@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { getSearchMovie } from "../../components/Api";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import noImage from "../../noImage.png";
+
 import toast, { Toaster } from "react-hot-toast";
 import css from "./MoviesPage.module.css";
 import { MovieList } from "../../components/MovieList/MovieList";
@@ -45,30 +45,7 @@ const MoviesPage = () => {
       <SearchBar onSearch={onSubmit} />
 
       <div className={css.container_movie}>
-        {movies && (
-          <MovieList>
-            {movies.map(({ id, poster_path, title }) => (
-              <li key={id} className={css.item_movie}>
-                <Link
-                  to={`/movies/${id}`}
-                  state={{ from: location }}
-                  className={css.link}
-                >
-                  <img
-                    className={css.img}
-                    src={
-                      poster_path
-                        ? `https://image.tmdb.org/t/p/w200/${poster_path}`
-                        : noImage
-                    }
-                    alt={title}
-                  />
-                  <p className={css.text}>{title}</p>
-                </Link>
-              </li>
-            ))}
-          </MovieList>
-        )}
+        {movies && <MovieList movies={movies} location={location} />}
         <Toaster duration={1000} position={"top-left"} />
       </div>
     </section>
