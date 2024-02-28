@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 
 import toast, { Toaster } from "react-hot-toast";
 import css from "./MoviesPage.module.css";
-import { MovieList } from "../../components/MovieList/MovieList";
+import MovieList from "../../components/MovieList/MovieList";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);

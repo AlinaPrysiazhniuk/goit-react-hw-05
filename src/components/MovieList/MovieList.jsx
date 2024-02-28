@@ -1,10 +1,8 @@
-/* eslint-disable no-unused-vars */
-// import css from "./MovieList.module.css";
 import noImage from "../../noImage.png";
 import { Link } from "react-router-dom";
 import css from "../../pages/MoviesPage/MoviesPage.module.css";
 
-export const MovieList = ({ movies, location }) => {
+const MovieList = ({ movies, location }) => {
   return (
     <ul className={css.list}>
       {movies.map(({ id, poster_path, title }) => (
@@ -30,3 +28,5 @@ export const MovieList = ({ movies, location }) => {
     </ul>
   );
 };
+
+export default MovieList;
