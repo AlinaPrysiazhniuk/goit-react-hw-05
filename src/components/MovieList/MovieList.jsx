@@ -1,6 +1,6 @@
 import noImage from "../../noImage.png";
 import { Link } from "react-router-dom";
-import css from "../../pages/MoviesPage/MoviesPage.module.css";
+import css from "./MovieList.module.css";
 
 const MovieList = ({ movies, location }) => {
   return (
