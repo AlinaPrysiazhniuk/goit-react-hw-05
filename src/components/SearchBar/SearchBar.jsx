@@ -1,23 +1,24 @@
 /* eslint-disable no-undef */
-import { useState } from 'react';
-import css from './SearchBar.module.css';
+import { useState } from "react";
+import css from "./SearchBar.module.css";
+import toast from "react-hot-toast";
 
 const SearchBar = ({ onSearch }) => {
-  const [movie, setMovie] = useState('');
+  const [movie, setMovie] = useState("");
 
-  const handleChangeQuery = e => {
+  const handleChangeQuery = (e) => {
     setMovie(e.currentTarget.value.toLowerCase());
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (movie.trim() === '') {
-      return alert('Enter data for search');
+    if (movie.trim() === "") {
+      return toast.error("Enter data for search");
     }
 
     onSearch(movie);
-    setMovie('');
+    setMovie("");
   };
 
   return (
