@@ -39,15 +39,14 @@ const MoviesPage = () => {
 
   const onSubmit = (searchQuery) => {
     setSearchParams({ query: `${searchQuery}` });
-    setMovies([]);
   };
 
   return (
     <section className={css.section_movies}>
       <SearchBar onSearch={onSubmit} />
+
       <div className={css.container_movie}>
         {movies && (
-          // <ul className={css.list}>
           <MovieList>
             {movies.map(({ id, poster_path, title }) => (
               <li key={id} className={css.item}>
@@ -70,7 +69,6 @@ const MoviesPage = () => {
               </li>
             ))}
           </MovieList>
-          // </ul>
         )}
       </div>
     </section>

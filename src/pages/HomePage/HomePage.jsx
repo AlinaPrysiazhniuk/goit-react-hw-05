@@ -25,7 +25,6 @@ const HomePage = () => {
         <div className={css.container_home}>
           <h2 className={css.title}>Trending today</h2>
 
-          {/* <ul className={css.list}> */}
           <MovieList>
             {movies.map(({ id, poster_path, title }) => (
               <li key={id} className={css.item}>
@@ -46,7 +45,6 @@ const HomePage = () => {
               </li>
             ))}
           </MovieList>
-          {/* </ul> */}
         </div>
       )}
     </section>
