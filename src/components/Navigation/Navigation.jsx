@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import css from "../Navigation/Navigation.module.css";
+import css from "./Navigation.module.css";
 
 const Navigation = () => {
   return (
