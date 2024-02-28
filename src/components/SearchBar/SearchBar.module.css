@@ -11,9 +11,10 @@
 }
 
 .input {
-  width: 250px;
-  height: 25px;
+  width: 300px;
+  height: 35px;
   border: 1px solid rgb(222, 125, 125);
+  border-radius: 10px;
 }
 
 .search_button {
@@ -25,6 +26,7 @@
   color: aliceblue;
   font-weight: 600;
   font-size: 20px;
+  border-radius: 10px;
 }
 
 .title {
