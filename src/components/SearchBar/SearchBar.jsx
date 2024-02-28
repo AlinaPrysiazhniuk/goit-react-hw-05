@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { useState } from "react";
 import css from "./SearchBar.module.css";
 import toast from "react-hot-toast";
