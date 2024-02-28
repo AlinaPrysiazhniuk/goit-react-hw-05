@@ -48,7 +48,7 @@ const MoviesPage = () => {
         {movies && (
           <MovieList>
             {movies.map(({ id, poster_path, title }) => (
-              <li key={id} className={css.item}>
+              <li key={id} className={css.item_movie}>
                 <Link
                   to={`/movies/${id}`}
                   state={{ from: location }}

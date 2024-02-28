@@ -80,4 +80,19 @@
   font-size: 20px;
   font-weight: 600;
   color: rgb(255, 255, 255);
+  transition: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    color: rgb(199, 27, 110);
+  }
+}
+
+.active {
+  font-family: "Bungee", sans-serif;
+  text-decoration: none;
+  font-size: 25px;
+  color: rgb(217, 209, 209);
+  font-weight: 700;
+  letter-spacing: -1px;
+  /* transition-duration: 2000ms; */
+  border-bottom: 2px solid rgb(227, 14, 117);
 }

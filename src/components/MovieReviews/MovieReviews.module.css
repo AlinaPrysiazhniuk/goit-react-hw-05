@@ -23,5 +23,11 @@
 }
 
 .text {
-  font-size: 18px;
+  display: block;
+  width: 400px;
+  padding: 10px 40px;
+  background-color: silver;
+  color: rgb(91, 16, 63);
+  font-size: 20px;
+  text-align: center;
 }

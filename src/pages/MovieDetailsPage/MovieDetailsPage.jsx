@@ -1,6 +1,12 @@
 import { getMovieDetails } from "../../components/Api";
 import { useState, useEffect } from "react";
-import { useParams, useLocation, Link, Outlet } from "react-router-dom";
+import {
+  useParams,
+  useLocation,
+  Link,
+  Outlet,
+  NavLink,
+} from "react-router-dom";
 import noImage from "../../noImage.png";
 import css from "./MovieDetailsPage.module.css";
 
@@ -71,22 +77,26 @@ const MovieDetailsPage = () => {
         <h3 className={css.movieAdditional}>Additional information</h3>
         <ul className={css.listAdditional}>
           <li>
-            <Link
+            <NavLink
               to="cast"
               state={{ from: location?.state?.from }}
-              className={css.itemAdditional}
+              className={({ isActive }) =>
+                isActive ? css.active : css.itemAdditional
+              }
             >
               Casts
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="reviews"
               state={{ from: location?.state?.from }}
-              className={css.itemAdditional}
+              className={({ isActive }) =>
+                isActive ? css.active : css.itemAdditional
+              }
             >
               Reviews
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
