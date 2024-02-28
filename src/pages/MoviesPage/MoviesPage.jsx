@@ -4,8 +4,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import { Link, useSearchParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import noImage from "../../noImage.png";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toast, { Toaster } from "react-hot-toast";
 import css from "./MoviesPage.module.css";
 import { MovieList } from "../../components/MovieList/MovieList";
 
@@ -70,6 +69,7 @@ const MoviesPage = () => {
             ))}
           </MovieList>
         )}
+        <Toaster duration={1000} position={"top-left"} />
       </div>
     </section>
   );
