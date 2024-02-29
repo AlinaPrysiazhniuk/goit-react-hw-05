@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { getSearchMovie } from "../../components/Api";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { useSearchParams } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 
 import toast, { Toaster } from "react-hot-toast";
 import css from "./MoviesPage.module.css";
@@ -12,7 +11,6 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const location = useLocation();
   const searchQuery = searchParams.get("query");
 
   useEffect(() => {
@@ -45,7 +43,7 @@ const MoviesPage = () => {
       <SearchBar onSearch={onSubmit} />
 
       <div className={css.container_movie}>
-        {movies && <MovieList movies={movies} location={location} />}
+        {movies && <MovieList movies={movies} />}
         <Toaster duration={1000} position={"top-left"} />
       </div>
     </section>
