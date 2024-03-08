@@ -4,15 +4,12 @@ import css from "./MovieList.module.css";
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
+  // console.log(location);
   return (
     <ul className={css.list}>
       {movies.map(({ id, poster_path, title }) => (
         <li key={id} className={css.item_movie}>
-          <Link
-            to={`/movies/${id}`}
-            state={{ from: location }}
-            className={css.link}
-          >
+          <Link to={`/movies/${id}`} state={location} className={css.link}>
             <img
               className={css.img}
               src={

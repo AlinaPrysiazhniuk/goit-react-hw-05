@@ -1,5 +1,5 @@
 import { getMovieDetails } from "../../components/Api";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   useParams,
   useLocation,
@@ -15,7 +15,7 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
 
   const location = useLocation();
-  const backLink = location?.state?.from ?? "/";
+  const backLink = useRef(location.state ?? "/");
 
   const getYear = () => new Date(movie.release_date).getFullYear();
 
@@ -35,7 +35,7 @@ const MovieDetailsPage = () => {
 
   return (
     <section className={css.movie}>
-      <Link to={backLink} className={css.goBack}>
+      <Link to={backLink.current} className={css.goBack}>
         Go back
       </Link>
       <div className={css.container_movie}>
